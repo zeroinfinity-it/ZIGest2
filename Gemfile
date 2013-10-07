@@ -5,7 +5,7 @@ gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-	gem 'sqlite3'
+	gem 'pg'
 	gem 'rspec-rails'
 end
 
@@ -39,6 +39,11 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
+end 
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
