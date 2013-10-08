@@ -8,6 +8,7 @@ gem 'bootstrap-sass'
 group :development, :test do
 	gem 'pg'
 	gem 'rspec-rails'
+	gem 'guard-rspec'
 end
 
 group :test do
