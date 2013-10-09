@@ -1,7 +1,10 @@
 ZIGest2::Application.routes.draw do
+  resources :sessions, only: [:new, :create, :destroy]
   resources :users
   root 'static_pages#home'
   match '/signup', to: 'users#new', via:                'get'
+  match '/signin',  to: 'sessions#new', via:            'get'
+  match '/signout', to: 'sessions#destroy', via:        'delete'
   match '/home', to: 'static_pages#home', via:          'get'
   match '/contatti', to: 'static_pages#contatti', via:  'get'
   match '/help', to: 'static_pages#help', via:          'get'
