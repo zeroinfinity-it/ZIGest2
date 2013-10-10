@@ -6,6 +6,7 @@ gem 'bootstrap-sass'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'faker'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
