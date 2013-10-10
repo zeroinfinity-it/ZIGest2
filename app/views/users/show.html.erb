@@ -11,4 +11,13 @@
       </h1>
     </section>
   </aside>
+    <div class="span8">
+    <% if @user.invoices.any? %>
+      <h3>Fatture (<%= @user.invoices.count %>)</h3>
+      <ol class="invoices">
+        <%= render @invoices %>
+      </ol>
+      <%= will_paginate @invoices %>
+    <% end %>
+  </div>
 </div>

@@ -1,11 +1,32 @@
-<div class="center hero-unit">
-<h1>ZIGest</h1>
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/invoice_form' %>
+      </section>
+    </aside>
 
- <h2>
-    Pagina principale del Gestionale di ZeroInfinity. Sistema in RoR Databade in Postgres
-  </h2>
+    <div class="span8">
+      <h3>Fatture Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+  <div class="center hero-unit">
+    <h1>Welcome to the Sample App</h1>
 
- <%= link_to "Iscriviti", signup_path , class: "btn btn-large btn-primary" %>
-</div>
+    <h2>
+      This is the home page for the
+      <a href="http://zeroinfinity.it/">ZeroInfinity snc </a>
+      ZIGest.
+    </h2>
 
-<%= link_to image_tag("Logo.png", alt: "Rails"), 'http://ZeroInfinity.it/' %>
+    <%= link_to "Sign up now!", signup_path,
+                                class: "btn btn-large btn-primary" %>
+  </div>
+
+  <%= link_to image_tag("Logo.png", alt: "Logo"), 'http://zeroinfinity.it/' %>
+<% end %>

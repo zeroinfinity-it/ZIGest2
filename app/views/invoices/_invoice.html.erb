@@ -1,0 +1,11 @@
+<li>
+  <span class="content"><%= invoice.oggetto %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(invoice.created_at) %> ago.
+  </span>
+    <% if current_user?(invoice.user) %>
+    <%= link_to "delete", invoice, method: :delete,
+                                     data: { confirm: "Sicuro?" },
+                                     title: invoice.oggetto %>
+  <% end %>
+</li>
