@@ -26,7 +26,7 @@ class InvoicesController < ApplicationController
   private
 
     def invoice_params
-      params.require(:invoice).permit(:oggetto)
+      params.require(:invoice).permit(:oggetto, :descrizione, :importo)
     end
 
     def correct_user

@@ -3,7 +3,9 @@
 	  <span class="user">
 	    <%= link_to feed_item.user.nome, feed_item.user %>
 	  </span>
-	  <span class="content"><%= feed_item.oggetto %></span>
+	  <span class="content"><%= feed_item.descrizione %>
+  |     <%= feed_item.oggetto %>
+  |     <%= feed_item.importo %> €</span>
 	  <span class="timestamp">
 	    Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
   </span>

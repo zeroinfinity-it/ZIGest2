@@ -1,7 +1,13 @@
 <%= form_for(@invoice) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :oggetto, placeholder: "Oggetto della fattura" %>
+    <%= f.text_field :oggetto, placeholder: "Titolo della fattura" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :descrizione, placeholder: "Oggetto della fattura" %>
+  </div>
+   <div class="field">
+    <%= f.text_field :importo, placeholder: "Importo della fattura" %>
   </div>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>
